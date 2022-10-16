@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid" style="margin-top: 2rem">
+	<h1 class="display-4">Bem vindo!</h1>
+	<p class="lead">Esse é o ClassBlog o gerenciador de turmas.</p>
+	<hr class="my-4">
+
+	<% if user_signed_in?%>	
+		<% unless ::Perfil.where(user_id: current_user.id).any?%>
+			<p>Complete os dados para seu Perfil</p>
+			<%= link_to "Completar Perfil", new_perfil_path, class:"btn btn-primary btn-lg", style: "color: white"%>
+		<% end%>
+	<% end%>
+
+</div>
